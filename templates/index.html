@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetis Prediction</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static '/vendors/bootstrap/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static '/vendors/bootstrap-icons/bootstrap-icons.css' %}">
+    <link rel="stylesheet" href="{% static '/vendors/boxicons/css/boxicons.css' %}">
+    <link rel="stylesheet" href="{% static '/vendors/aos/aos.css' %}">
+    <link rel="stylesheet" href="{% static '/css/main.css' %}">
+    <script src="{% static '/vendors/jquery/jquery.js' %}"></script>
+</head>
+<body>
+    
+    <div class="show-case">
+
+    </div>
+    <div class="content">
+        <nav class="nav-bar">
+            <div class="name-sec">
+                <img src="{% static '/images/profile-img1.jpg' %}" alt="">   
+                <h5>{{ username }}</h5>
+            </div>
+            <div class="admin">
+                <a href="/admin/" target="_blank">Admin</a>
+            </div>
+        </nav>
+            <div class="form-container">
+                <div class="subject">
+                    <h4>Diabetes Prediction</h4>
+                </div>
+                <form action="" method="post" class="predictionForm" id="predictionForm">
+                    
+                    
+                    <div class="form-col" id="pregranancies-row">
+                            
+                        <input type="number" name="preganancies" class = "required"  placeholder="Number of Pregranancies" id="pregranancies">
+                    </div>
+                    <div class="form-col">
+                        <input type="number" name="glucose" placeholder="Glucose levels" class="required" id="glucose">
+                    </div>
+                    <div class="form-col-group">
+                        <div class="form-col">
+                            <input type="number" placeholder="Blood pressure" class="required" name="BP" id="BP">
+                        </div>
+                        <div class="form-col">
+                            <input type="number" name="insulin" placeholder="Insulin" class="required" id="insulin">
+                        </div>
+                    </div>
+                    <div class="form-col-group">
+                        <div class="form-col">
+                            <input type="text" name="BMI" placeholder="BMI" class="required" id="BMI">
+                        </div>
+                        <div class="form-col">
+                            <input type="number" name="age" placeholder="Age" class="required" id="age">
+                        </div>
+                    </div>
+                  
+                    <div class="form-col">
+                        <p>Does anyone in your family / blood ever had Diabetes ?</p>
+                        <div class="form-col-radio">
+                            <label for="yes">Yes</label>
+                            <input type="radio" value="yes" id="yes" name="pdf" class="pdf">
+                        </div>
+                        <div class="form-col-radio">
+                            <label for="no">No</label>
+                            <input type="radio" checked value="no" id="no" name="pdf" class="pdf">
+                        </div>
+                    </div>     
+
+              
+              
+                    <button class="submit-form">
+                        Submit
+                    </button>
+                </form>
+                <div class="container ">
+                    <div class="show-results hidden ">
+                        <p class="results-message"></p>
+                    </div>
+                </div>
+                <div class="report-table hidden">
+                    <div class="container">
+                        <div class="table">
+                            <table>
+                             <tbody>
+                                 <tr>
+                                     <th scope="col">Accuracy</th>
+                                     <td id="precision">
+                                     </td>                                
+                                 </tr>
+                                 <tr>
+                                     <th scope="col">Recall</th>
+                                     <td id="recall">
+                                     </td>
+                                 </tr>
+                                 <tr>
+                                     <th scope="col">F1-Score</th>    
+                                     <td id="f1-score">
+                                     </td>
+                                 </tr>
+                                 <tr>
+                                     <th scope="col">Support</th>
+                                     <td id="support">
+                                     </td>
+                                 </tr>
+                             </tbody>
+                            </table>
+                         
+                    </div>
+                        
+                    </div>
+                </div>
+                <div class="dtable">
+                    <div class="continer table-responsive">
+                        <table class="table table-hover">
+                          <thead>
+                            <tr>
+                              <th scope="col">Pregranancies</th>
+                              <th scope="col">Glucose</th>
+                              <th scope="col">Bp</th>
+                              <th scope="col">Insulin</th>
+                              <th scope="col">BMI</th>
+                              <th scope="col">DPF</th>
+                              <th scope="col">Age</th>
+                              <th scope="col">Prediction</th>
+                            </tr>
+                          </thead>
+                          <tbody id="userHistory">
+                            {% if history %}
+                            {% for i in history%}
+                            <tr>
+                              <td>{{ i.preg}} </td>
+                              <td>{{ i.glucose}} </td>
+                              <td>{{ i.BP}} </td>
+                              <td>{{ i.insulin}} </td>
+                              <td>{{ i.BMI}} </td>
+                              <td>{{ i.DPF}} </td>
+                              <td>{{ i.age}} </td>
+                              <td>{{ i.prediction}} </td>
+                            </tr>
+                            {% endfor %}
+                            {% endif %}
+                          </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+        </div>
+    </div>
+
+    <script src="{% static '/vendors/bootstrap/js/bootstrap.js' %}"></script>
+    <script src="{% static '/vendors/aos/aos.js' %}"></script>
+    <script src="{% static '/js/getCookies.js' %}"></script>
+    <script src="{% static '/js/home.js' %}"></script>
+</body>
+</html>

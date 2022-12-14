@@ -1,0 +1,186 @@
+@font-face {
+    font-family: "Monte";
+    src: url(../fonts/Montserrat-Medium.ttf);
+}
+@font-face{
+    font-family: "Mont Bold";
+    src: url(../fonts/Montserrat-Bold.ttf);
+}
+*{
+    font-family: "Monte";
+}
+body{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.hidden{
+    display: none !important;
+}
+.show-case,
+.content{
+    height: 100vh;
+}
+.show-case{
+    width: 45%;
+    background: url(../images/bg.jpg);
+    background-position: center;
+    background-size: cover;
+}
+.subject h4{
+    font-family: "Mont Bold";
+    background-color: royalblue;
+    color: white;
+    padding: 10px 25px;
+    border-top-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    width: fit-content;
+    margin-left: 30%;
+}
+input{
+    padding: 15px 15px;
+    border: none;
+    outline: none;
+    border: 2px solid royalblue;
+    border-top-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+.nav-bar{
+    display: flex;
+    flex-direction: row;
+    height: 75px;
+    background-color: transparent;
+    padding: 15px 15px;
+    justify-content: space-between;
+}
+.name-sec
+{
+    display: flex;
+    flex-direction: row;
+}
+.name-sec h5{
+    margin-top: 5px;
+    margin-left: 10px;
+}
+.admin a{
+    font-family: "Mont Bold";
+    color: royalblue;
+}
+.content{
+    width: 55%;
+    overflow-y: scroll;
+}
+.content .lgca-container{
+    margin-top: 15px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-y: hidden;
+} 
+.predictionForm{
+    width: 100%;
+    padding: 25px;
+    background-color: transparent;
+    border-radius: 15px;
+}
+.form-col-group{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.form-col-group .form-col:last-child{
+    margin-left: 55px;
+}
+.form-col{
+    padding: 10px 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+input::placeholder{
+    font-family: "Mont Bold";
+    color: #333;
+}
+.radio-btn{
+    margin-left: 15px;
+}
+input[type = "radio"]~label{
+    margin-left: 5px;
+}
+
+.submit-form{
+    margin-top: 10px;
+    width: 100%;
+    padding: 15px ;
+    background-color: royalblue;
+    border-top-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    color: white;
+    border: none;
+    font-family: "Mont Bold";
+    transition: all ease-in-out 0.3s;
+}
+.submit-form:hover{
+    background-color: rgb(14, 70, 238);
+}
+.show-results{
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 50px;
+}
+.no-diabetes{
+    background-color: rgb(238, 238, 238);
+}
+.no-diabetes b{
+    color: royalblue;
+}
+.err-div{
+    color: #dc3545;
+}
+.yes-diabetes{
+    background-color: #dc3545;
+    color: white;
+}
+.yes-diabetes b{
+    color: wheat;
+}
+.lgca-container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;   
+}
+.lgca-container form {
+    text-align: center;
+    border: 2px solid royalblue;
+    width: 35%;
+    padding-bottom: 25px;
+    border-top-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+.lgca-container form .form-col{
+    margin: 0px 15px;
+}
+
+.header {
+    width: 100%;
+    padding: 35px 0px;
+    text-align: center;
+    font-family: "Mont Bold";
+    color: white;
+    background-color: royalblue;
+    border-top-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+.lgca-container .submit-form{
+    margin: 0px 10px;
+    width: 95%;
+    background-color: blue;
+}
+.form-col-radio{
+    margin-left: 25px;
+}

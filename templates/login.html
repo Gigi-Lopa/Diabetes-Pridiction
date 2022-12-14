@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetis Prediction</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static '/vendors/bootstrap/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static '/vendors/bootstrap-icons/bootstrap-icons.css' %}">
+    <link rel="stylesheet" href="{% static '/vendors/boxicons/css/boxicons.css' %}">
+    <link rel="stylesheet" href="{% static '/vendors/aos/aos.css' %}">
+    <link rel="stylesheet" href="{% static '/css/main.css' %}">
+    <script src="{% static '/vendors/jquery/jquery.js' %}"></script>
+</head>
+<body>
+    <div class="lgca-container">
+
+        {% csrf_token %}
+        <form action="" id="loginForm" method="post">
+            <div class="header">
+                <h4>Diabetes Prediction</h4>
+            </div>
+            <div class="form-col">
+                <input type="text" name="username" placeholder="Username" class="required" id="username">
+            </div>
+            <div class="form-col">
+                <input type="password" name="password" placeholder="password" class="required" id="age">
+            </div>
+            <a href="/create/account/">Create Account?</a>
+            <div class="err-div hidden" id="loginErr">
+                <span class="bi bi-exclamation-triangle-fill"></span> Account not found, try again.
+            </div>
+            <br>
+            <button class="submit-form">
+                Login
+            </button>
+        </form>
+    </div>
+
+    <script src="{% static '/vendors/bootstrap/js/bootstrap.js' %}"></script>
+    <script src="{% static '/vendors/aos/aos.js' %}"></script>
+    <script src="{% static '/js/getCookies.js' %}"></script>
+    <script src="{% static '/js/handleLogin.js' %}"></script>
+</body>
+</html>
